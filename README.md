@@ -2,6 +2,8 @@
 
 A Laravel-based application for managing orders, customers, products, and restaurants, featuring a robust admin panel powered by Filament 4.
 
+<img width="3810" height="1806" alt="image" src="https://github.com/user-attachments/assets/186d53b2-eedc-4b60-b5df-141806afaf95" />
+
 ## Overview
 
 This repository contains the backend and administrative interface for a delivery service platform. It uses a domain-driven structure and integrates several modern Laravel ecosystem packages for authentication, settings management, and API capabilities.

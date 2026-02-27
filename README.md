@@ -47,28 +47,23 @@ This repository contains the backend and administrative interface for a delivery
 
 5. **Run**
    ```bash
-   composer i
+   composer i && npm i
    ```
 
 6. **Run**
    ```bash
-   npm i
-   ```
-
-7. **Run**
-   ```bash
    php artisan key:generate
    ```
 
-8. **Setup the env**
+7. **Setup the env**
    Edit .env make sure DB_HOST=mysql8, DB_USER=root, DB_PASSWORD=root and DB_NAME something sensible
 
-9. **Run**
+8. **Run**
     ```bash
     php artisan migrate:fresh --seed
     ```
 
-10. **Run**
+9. **Run**
     ```bash
     npm run build
     ```

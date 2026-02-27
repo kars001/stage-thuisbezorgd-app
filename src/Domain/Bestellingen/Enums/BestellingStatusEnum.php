@@ -15,6 +15,7 @@ enum BestellingStatusEnum: string implements HasLabel, HasColor
     case Afgeleverd = 'afgeleverd';
     case Geannuleerd = 'geannuleerd';
 
+    // Label voor de status.
     public function getLabel(): string
     {
         return match ($this) {
@@ -28,6 +29,7 @@ enum BestellingStatusEnum: string implements HasLabel, HasColor
         };
     }
 
+    // Kleur voor de status.
     public function getColor(): string
     {
         return match ($this) {

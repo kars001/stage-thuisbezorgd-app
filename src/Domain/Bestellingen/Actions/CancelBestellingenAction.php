@@ -7,6 +7,7 @@ use Domain\Bestellingen\Models\Bestellingen;
 
 class CancelBestellingenAction
 {
+    // Annuleer een bestelling.
     public function execute(
         Bestellingen $bestellingen,
     ): Bestellingen {

@@ -10,16 +10,20 @@ use Domain\Producten\Models\Varianten;
 
 class CreateOrderItemsAction
 {
+    // Link een product met variant aan bestelling.
     public function execute(
         OrderItemsUpsertData $orderItemData,
         GetProductExtraPrijsAction $getProductExtraPrijsAction,
     ): OrderItems
     {
+        // Haal product prijs op.
         $productPrijs = Producten::query()->getProductPrijs($orderItemData->producten_id)->value('prijs');
         $productenExtraPrijs = $getProductExtraPrijsAction->execute($orderItemData->producten_id, $orderItemData->varianten_id);
 
+        // Bereken eindprijs.
         $eindPrijs = (float) $productPrijs + $productenExtraPrijs;
 
+        // Maak nieuwe order item.
         $orderItem = new OrderItems([
             'prijs' => $eindPrijs,
             'aantal' => $orderItemData->aantal,

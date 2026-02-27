@@ -8,8 +8,10 @@ use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Database\Eloquent\Collection;
 
+// Dit is de response voor de lijst met producten
 readonly class ProductenIndexResponse implements Responsable
 {
+    // Hier slaat ie de lijst met producten op
     /**
      * @param Collection<int, Producten> $producten
      */
@@ -18,6 +20,7 @@ readonly class ProductenIndexResponse implements Responsable
     ) {
     }
 
+    // Zet de gegevens om naar een JSON antwoord
     public function toResponse($request): JsonResponse
     {
         return response()->json([

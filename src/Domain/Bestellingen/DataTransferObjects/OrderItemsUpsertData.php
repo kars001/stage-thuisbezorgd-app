@@ -2,8 +2,10 @@
 
 namespace Domain\Bestellingen\DataTransferObjects;
 
+// Gegevens voor een bestelregel
 class OrderItemsUpsertData
 {
+    // Maak een nieuwe bestelregel aan
     public function __construct(
         public int $aantal,
         public int $bestellingen_id,
@@ -16,6 +18,7 @@ class OrderItemsUpsertData
     /**
      * @param array<string, mixed> $data
      */
+    // Maak dit object vanuit een request
     public static function fromRequest(array $data): self
     {
         return new self(
@@ -30,6 +33,7 @@ class OrderItemsUpsertData
     /**
      * @return array{prijs: float|null, aantal: int, bestellingen_id: int, producten_id: int, varianten_id: int}
      */
+    // Zet dit object om naar een lijst
     public function toArray(): array
     {
         return [

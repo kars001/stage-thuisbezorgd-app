@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+// Bestellingen query builder
 #[UseEloquentBuilder(BestellingenQueryBuilder::class)]
 
 class Bestellingen extends Authenticatable
@@ -34,6 +35,7 @@ class Bestellingen extends Authenticatable
     /**
      * @return BelongsTo<Klanten, $this>
      */
+    // De klant die bij deze bestelling hoort
     public function klanten(): BelongsTo
     {
         return $this->belongsTo(Klanten::class, 'klanten_id');
@@ -42,6 +44,7 @@ class Bestellingen extends Authenticatable
     /**
      * @return BelongsTo<Restaurant, $this>
      */
+    // Het restaurant waar deze bestelling is geplaatst
     public function restaurant(): BelongsTo
     {
         return $this->belongsTo(Restaurant::class, 'restaurant_id');

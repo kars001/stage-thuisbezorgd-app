@@ -7,10 +7,12 @@ use Domain\Producten\Models\Producten;
 
 class CreateProductenAction
 {
+    // Maak een nieuw product aan.
     public function execute(
         ProductenUpsertData $productenData,
     ): Producten
     {
+        // Maak product aan.
         $producten = new Producten([
             'restaurant_id' => $productenData->restaurant_id,
             'naam' => $productenData->naam,
@@ -20,6 +22,7 @@ class CreateProductenAction
 
         $producten->save();
 
+        // Synchroniseer varianten, categorieën en allergieën met de producten.
         $producten->varianten()->sync($productenData->varianten ?? []);
         $producten->categorieen()->sync($productenData->categorie ?? []);
         $producten->allergieen()->sync($productenData->allergieen ?? []);

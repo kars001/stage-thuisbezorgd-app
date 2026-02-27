@@ -9,6 +9,7 @@ class StoreBestellingenRequest extends FormRequest
     /**
      * @return string[]
      */
+    // Regels voor het opslaan van een bestelling.
     public function rules(): array
     {
         return [

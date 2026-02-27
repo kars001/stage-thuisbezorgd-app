@@ -8,6 +8,7 @@ use App\Admin\Restaurants\Controllers\RestaurantController;
 use App\Api\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+// Defineer de API routes.
 Route::group([
     'middleware' => ['auth:api'],
 ], static function () {

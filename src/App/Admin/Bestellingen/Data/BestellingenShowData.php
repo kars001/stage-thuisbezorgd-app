@@ -4,15 +4,15 @@ namespace App\Admin\Bestellingen\Data;
 
 use Domain\Bestellingen\Models\Bestellingen;
 
+// Deze klasse bereidt de bestelgegevens voor op JSON-serialisatie
 readonly class BestellingenShowData  implements \JsonSerializable
 {
     public function __construct(
         private Bestellingen $bestellingen
     ) {}
 
+    // Zet de bestelobject-gegevens om naar een array voor de API-output
     /**
-     * @inheritDoc
-     *
      * @return array<string, mixed>
      */
     public function jsonSerialize(): array

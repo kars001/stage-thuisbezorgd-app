@@ -7,6 +7,7 @@ use Domain\Restaurants\DataTransferObjects\RestaurantUpsertData;
 
 class CreateRestaurantAction
 {
+    // Maak een nieuw restaurant aan.
     public function execute(
         RestaurantUpsertData $restaurantData,
     ): Restaurant

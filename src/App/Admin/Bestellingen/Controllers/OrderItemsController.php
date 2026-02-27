@@ -12,6 +12,7 @@ use App\Admin\Bestellingen\Responses\OrderItemsStoreResponse;
 
 class OrderItemsController
 {
+    // Sla een nieuw product op en link hem aan een bestelling.
     public function store(
         StoreOrderItemsRequest $request,
         CreateOrderItemsAction $action,

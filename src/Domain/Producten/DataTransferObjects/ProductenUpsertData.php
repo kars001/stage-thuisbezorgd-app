@@ -3,6 +3,7 @@
 
 namespace Domain\Producten\DataTransferObjects;
 
+// Gegevens voor een product
 class ProductenUpsertData
 {
     /**
@@ -10,6 +11,7 @@ class ProductenUpsertData
      * @param array<int, int|string>|null $categorie
      * @param array<int, int|string>|null $allergieen
      */
+    // Maak een nieuw product aan
     public function __construct(
         public string $naam,
         public string $beschrijving,
@@ -33,6 +35,7 @@ class ProductenUpsertData
      *     restaurant_id: ?int
      * }
      */
+    // Zet dit object om naar een lijst
     public function toArray(): array
     {
         return [

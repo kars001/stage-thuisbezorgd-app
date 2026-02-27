@@ -21,6 +21,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property ?string $logo_url
  * @property ?string $header_url
  */
+// Restaurant query builder
 #[UseEloquentBuilder(RestaurantQueryBuilder::class)]
 class Restaurant extends Authenticatable
 {

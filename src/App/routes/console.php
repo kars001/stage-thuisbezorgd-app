@@ -1,8 +1,7 @@
 <?php
 
-// Restaurant soft deletes
+// Verwijder soft-deleted Restaurants, om te testen wijzig daily() naar everyMinute()
 Schedule::command('delete:soft-deletes')->daily()->withoutOverlapping();
-// To test, replace daily() with everyMinute()
 
+// Annuleer verlopen bestellingen, om te testen wijzig EveryThirtyMinutes() naar EveryMinute()
 Schedule::command('cancel:outdated-orders')->everyThirtyMinutes()->withoutOverlapping();
-// To test, replace everyThirtyMinutes() with everyMinute()

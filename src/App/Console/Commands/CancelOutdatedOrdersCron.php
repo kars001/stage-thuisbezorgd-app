@@ -32,8 +32,10 @@ class CancelOutdatedOrdersCron extends Command
         parent::__construct();
     }
 
+    // Wijzig de status naar 'geannuleerd' voor bestellingen die niet betaald zijn binnen 15 minuten
     public function handle(): void
     {
+        // Haal bestellingen op die niet betaald zijn binnen 15 minuten
         $bestellingen = Bestellingen::query()->getBestellingenForCancellation()->get();
 
         /** @var Bestellingen $bestelling */

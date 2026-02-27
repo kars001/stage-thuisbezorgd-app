@@ -21,9 +21,9 @@ class EditBestellingen extends EditRecord
     {
         /** @var Bestellingen $record */
         $userData = new BestellingUpsertData(
-            status: $data['status'],
             klanten_id: $record->klanten_id,
             restaurant_id: $record->restaurant_id,
+            status: $data['status'],
             verzendkosten: $record->verzendkosten,
             totaalprijs: $record->totaalprijs,
         );

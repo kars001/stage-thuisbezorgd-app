@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Domain\Restaurants\Models\Restaurant;
 
+// Producten query builder
 #[UseEloquentBuilder(ProductenQueryBuilder::class)]
 class Producten extends Authenticatable
 {
@@ -27,6 +28,7 @@ class Producten extends Authenticatable
     /**
      * @return BelongsTo<Restaurant, $this>
      */
+    // Het restaurant waar dit product bij hoort
     public function restaurant(): BelongsTo
     {
         return $this->belongsTo(Restaurant::class);
@@ -35,6 +37,7 @@ class Producten extends Authenticatable
     /**
      * @return BelongsToMany<Varianten, $this>
      */
+    // De verschillende varianten van dit product
     public function varianten(): BelongsToMany
     {
         return $this->belongsToMany(
@@ -48,6 +51,7 @@ class Producten extends Authenticatable
     /**
      * @return BelongsToMany<Categorie, $this>
      */
+    // De categorieën waar dit product onder valt
     public function categorieen(): BelongsToMany
     {
         return $this->belongsToMany(
@@ -61,6 +65,7 @@ class Producten extends Authenticatable
     /**
      * @return BelongsToMany<Allergieen, $this>
      */
+    // De allergieën die bij dit product horen
     public function allergieen(): BelongsToMany
     {
         return $this->belongsToMany(

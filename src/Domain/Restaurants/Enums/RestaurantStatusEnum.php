@@ -10,6 +10,7 @@ enum RestaurantStatusEnum: string implements HasLabel, HasColor
     case Open = 'open';
     case Gesloten = 'gesloten';
 
+    // Label voor de status.
     public function getLabel(): string
     {
         return match ($this) {
@@ -18,6 +19,7 @@ enum RestaurantStatusEnum: string implements HasLabel, HasColor
         };
     }
 
+    // Kleur voor de status.
     public function getColor(): string
     {
         return match ($this) {

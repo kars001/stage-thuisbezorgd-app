@@ -9,9 +9,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class RestaurantController
 {
-    /**
-     * @return RestaurantIndexResponse|JsonResponse
-     */
+     // Toon een lijst met alle restaurants.
     public function index(): RestaurantIndexResponse|JsonResponse
     {
         try {

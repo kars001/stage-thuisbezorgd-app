@@ -9,6 +9,7 @@ class StoreOrderItemsRequest extends FormRequest
     /**
      * @return string[]
      */
+    // Regels voor het opslaan van een order_items.
     public function rules(): array
     {
         return [

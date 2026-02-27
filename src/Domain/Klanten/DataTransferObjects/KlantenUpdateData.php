@@ -2,8 +2,10 @@
 
 namespace Domain\Klanten\DataTransferObjects;
 
+// Gegevens om een klant bij te werken
 class KlantenUpdateData
 {
+    // Maak een nieuw object om de klant bij te werken
     public function __construct(
         public string $voornaam,
         public string $achternaam,
@@ -16,6 +18,7 @@ class KlantenUpdateData
     /**
      * @param array<string, mixed> $data
      */
+    // Maak dit object vanuit een request
     public static function fromRequest(array $data): self
     {
         return new self(
@@ -30,6 +33,7 @@ class KlantenUpdateData
     /**
      * @return array<string, string|null>
      */
+    // Zet dit object om naar een lijst
     public function toArray(): array
     {
         return [

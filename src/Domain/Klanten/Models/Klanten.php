@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Attributes\UseEloquentBuilder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+// Klanten query builder
 #[UseEloquentBuilder(KlantenQueryBuilder::class)]
 class Klanten extends Authenticatable
 {

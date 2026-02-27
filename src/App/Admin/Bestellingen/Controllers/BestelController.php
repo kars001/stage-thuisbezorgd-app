@@ -16,9 +16,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class BestelController
 {
-    /**
-     * @return BestellingenIndexResponse|JsonResponse
-     */
+    // Toon een lijst met alle bestellingen.
     public function index(): BestellingenIndexResponse|JsonResponse
     {
         try {
@@ -34,6 +32,7 @@ class BestelController
         }
     }
 
+    // Maak een nieuwe bestelling aan.
     public function store(StoreBestellingenRequest $request, CreateBestellingenAction $action): BestellingenStoreResponse|JsonResponse
     {
         try {
@@ -48,6 +47,7 @@ class BestelController
         }
     }
 
+     // Bevestig een bestaande bestelling.
     public function update(Bestellingen $bestellingen, ConfirmBestellingenAction $action): BestellingenUpdateResponse|JsonResponse
     {
         try {

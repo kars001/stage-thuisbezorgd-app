@@ -4,8 +4,10 @@ namespace Domain\Bestellingen\DataTransferObjects;
 
 use Domain\Bestellingen\Enums\BestellingStatusEnum;
 
+// Gegevens voor een bestelling
 class BestellingUpsertData
 {
+    // Maak een nieuwe bestelling aan
     public function __construct(
         public int $klanten_id,
         public int $restaurant_id,
@@ -18,6 +20,7 @@ class BestellingUpsertData
     /**
      * @param array<string, mixed> $data
      */
+    // Maak dit object vanuit een request
     public static function fromRequest(array $data): self
     {
         return new self(
@@ -32,6 +35,7 @@ class BestellingUpsertData
     /**
      * @return array{status: BestellingStatusEnum|null, klanten_id: int, restaurant_id: int, verzendkosten: float|null, totaalprijs: float|null}
      */
+    // Zet dit object om naar een lijst
     public function toArray(): array
     {
         return [

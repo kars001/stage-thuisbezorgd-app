@@ -4,8 +4,10 @@ namespace Domain\Restaurants\DataTransferObjects;
 
 use Domain\Restaurants\Enums\RestaurantStatusEnum;
 
+// Gegevens voor een restaurant
 class RestaurantUpsertData
 {
+    // Maak een nieuw restaurant aan
     public function __construct(
         public string $naam,
         public string $beschrijving,
@@ -27,6 +29,7 @@ class RestaurantUpsertData
      *   open_en_sluit_tijden: array<string, array<string, string>>,
      * }
      */
+    // Zet dit object om naar een lijst
     public function toArray(): array
     {
         return [

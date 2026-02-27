@@ -9,9 +9,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 class ProductController
 {
-    /**
-     * @return ProductenIndexResponse|JsonResponse
-     */
+     // Toon een lijst met alle producten.
     public function index(): ProductenIndexResponse|JsonResponse
     {
         try {

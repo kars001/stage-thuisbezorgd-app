@@ -4,15 +4,15 @@ namespace App\Admin\Producten\Data;
 
 use Domain\Producten\Models\Producten;
 
+// Deze klasse bereidt de productgegevens voor op JSON-serialisatie
 readonly class ProductenShowData  implements \JsonSerializable
 {
     public function __construct(
         private Producten $producten
     ) {}
 
+    // Zet de productobject-gegevens om naar een array voor de API-output
     /**
-     * @inheritDoc
-     *
      * @return array<string, mixed>
      */
     public function jsonSerialize(): array

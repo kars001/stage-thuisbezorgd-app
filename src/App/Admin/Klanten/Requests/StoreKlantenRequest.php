@@ -9,6 +9,7 @@ class StoreKlantenRequest extends FormRequest
     /**
      * @return string[]
      */
+    // Regels voor het opslaan van een klant.
     public function rules(): array
     {
         return [
@@ -20,6 +21,7 @@ class StoreKlantenRequest extends FormRequest
         ];
     }
 
+    // Aangepast bericht als het email adres al in gebruik is
     /**
      * @return string[]
      */

@@ -7,6 +7,7 @@ use Domain\Restaurants\Models\Restaurant;
 
 class UpdateRestaurantAction
 {
+    // Update restaurant.
     public function execute(
         Restaurant $restaurant,
         RestaurantUpsertData $restaurantData,

@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class ProductenQueryBuilder extends Builder
 {
+    // Haal de gegevens van een specifiek product op
     public function getProductPrijs(int $productenId): self
     {
         return $this->whereKey($productenId);

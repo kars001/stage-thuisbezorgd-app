@@ -7,6 +7,7 @@ use Domain\Producten\Models\Producten;
 
 class UpdateProductenAction
 {
+    // Update product.
     public function execute(
         Producten $producten,
         ProductenUpsertData $productenData,
@@ -18,14 +19,17 @@ class UpdateProductenAction
             'prijs' => $productenData->prijs,
         ]);
 
+        // Bekijkt of varianten zijn meegegeven.
         if ($productenData->varianten !== null) {
             $producten->varianten()->sync($productenData->varianten);
         }
 
+        // Bekijkt of categorie is meegegeven.
         if ($productenData->categorie !== null) {
             $producten->categorieen()->sync($productenData->categorie);
         }
 
+        // Bekijkt of allergieen zijn meegegeven.
         if ($productenData->allergieen !== null) {
             $producten->allergieen()->sync($productenData->allergieen);
         }

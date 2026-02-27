@@ -7,6 +7,7 @@ use Domain\Producten\Models\Categorie;
 
 class UpdateCategorieenAction
 {
+    // Update categorie.
     public function execute(
         Categorie           $categorieen,
         CategorieenUpsertData $categorieenData,

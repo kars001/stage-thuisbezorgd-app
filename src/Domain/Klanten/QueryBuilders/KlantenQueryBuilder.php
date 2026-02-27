@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
  */
 class KlantenQueryBuilder extends Builder
 {
+    // Zoek klanten op basis van hun e-mailadres
     public function findKlantenWithEmail(string $email): self
     {
         /** @var KlantenQueryBuilder $trashedQuery */

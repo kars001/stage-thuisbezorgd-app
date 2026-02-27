@@ -34,6 +34,7 @@ class DeleteSoftDeletedRecordsCron extends Command
 
     public function handle(): void
     {
+        // Verwijder restaurants die ouder zijn dan 30 dagen
         $restaurants = Restaurant::query()->onlyDeletedOlderThan(30)->get(['id', 'logo_url', 'header_url']);
 
         /** @var Restaurant $restaurant */

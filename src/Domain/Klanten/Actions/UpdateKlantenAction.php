@@ -7,6 +7,7 @@ use Domain\Klanten\Models\Klanten;
 
 class UpdateKlantenAction
 {
+    // Update klant.
     public function execute(
         Klanten           $klanten,
         KlantenUpdateData $klantData,

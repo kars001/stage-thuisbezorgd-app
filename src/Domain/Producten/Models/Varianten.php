@@ -19,6 +19,7 @@ class Varianten extends Authenticatable
     /**
      * @return BelongsToMany<Producten, $this>
      */
+    // De producten die deze variant kunnen hebben
     public function producten(): BelongsToMany
     {
         return $this->belongsToMany(

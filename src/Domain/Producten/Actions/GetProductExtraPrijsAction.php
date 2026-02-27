@@ -6,6 +6,7 @@ use Domain\Producten\Models\Producten;
 
 class GetProductExtraPrijsAction
 {
+    // Haal extra prijs op.
     public function execute(int $productenId, int $variantenId): float
     {
         return Producten::query()

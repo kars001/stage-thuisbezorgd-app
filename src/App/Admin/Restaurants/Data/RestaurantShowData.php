@@ -4,15 +4,15 @@ namespace App\Admin\Restaurants\Data;
 
 use Domain\Restaurants\Models\Restaurant;
 
+// Deze klasse bereidt de restaurantgegevens voor op JSON-serialisatie
 readonly class RestaurantShowData implements \JsonSerializable
 {
     public function __construct(
         private Restaurant $restaurant
     ) {}
 
+    // Zet de restaurantobject-gegevens om naar een array voor de API-output
     /**
-     * @inheritDoc
-     *
      * @return array<string, mixed>
      */
     public function jsonSerialize(): array

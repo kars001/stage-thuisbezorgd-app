@@ -8,10 +8,10 @@ use Illuminate\Support\Carbon;
 
 /**
  * @extends Builder<Restaurant>
-
  */
 class RestaurantQueryBuilder extends Builder
 {
+    // Haal alleen verwijderde restaurants op die ouder zijn dan een aantal dagen
     public function onlyDeletedOlderThan(int $days): self
     {
         /** @var RestaurantQueryBuilder $trashedQuery */

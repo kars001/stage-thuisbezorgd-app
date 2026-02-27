@@ -12,6 +12,7 @@ use Illuminate\Support\Carbon;
  */
 class BestellingenQueryBuilder extends Builder
 {
+    // Haal bestellingen op die geannuleerd kunnen worden
     public function getBestellingenForCancellation(): self
     {
         /** @var BestellingenQueryBuilder $trashedQuery */
@@ -21,6 +22,7 @@ class BestellingenQueryBuilder extends Builder
             ->where('updated_at', '<=', Carbon::now()->subMinutes(15));
     }
 
+    // Zoek een bestelling op basis van het ID
     public function getBestellingen(int $bestellingId): self
     {
         return $this->whereKey($bestellingId);

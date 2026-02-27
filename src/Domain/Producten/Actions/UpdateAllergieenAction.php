@@ -7,6 +7,7 @@ use Domain\Producten\Models\Allergieen;
 
 class UpdateAllergieenAction
 {
+    // Update allergie.
     public function execute(
         Allergieen           $allergieen,
         AllergieenUpsertData $allergieenData,

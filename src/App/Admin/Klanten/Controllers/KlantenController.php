@@ -17,6 +17,7 @@ use Illuminate\Http\JsonResponse;
 
 class KlantenController
 {
+     // Sla een nieuwe klant op.
     public function store(StoreKlantenRequest $request, CreateKlantenAction $action): KlantenStoreResponse|JsonResponse
     {
         try {
@@ -31,6 +32,7 @@ class KlantenController
         }
     }
 
+     // Pas de gegevens van een klant aan.
     public function update(UpdateKlantenRequest $request, Klanten $klanten, UpdateKlantenAction $action): KlantenUpdateResponse|JsonResponse
     {
         try {

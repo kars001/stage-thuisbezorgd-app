@@ -11,6 +11,7 @@ class UpdateKlantenRequest extends FormRequest
     /**
      * @return array<string, string|Rule|array<string|Rule>>
      */
+    // Regels voor het updaten van een klant.
     public function rules(): array
     {
         /** @var Klanten $klanten */
@@ -24,12 +25,14 @@ class UpdateKlantenRequest extends FormRequest
                 'required',
                 'string',
                 'email',
+                // Het email adres moet uniek zijn, behalve voor deze klant
                 Rule::unique('klanten', 'email')->ignore($klanten->id),
             ],
             'telefoonnummer' => 'string',
         ];
     }
 
+    // Aangepast bericht als het email adres al in gebruik is
     /**
      * @return string[]
      */

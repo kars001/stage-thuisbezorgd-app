@@ -7,6 +7,7 @@ use Domain\Producten\Models\Varianten;
 
 class UpdateVariantenAction
 {
+    // Update variant.
     public function execute(
         Varianten           $varianten,
         VariantenUpsertData $variantenData,

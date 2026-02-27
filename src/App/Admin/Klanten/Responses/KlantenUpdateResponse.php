@@ -7,13 +7,16 @@ use Domain\Klanten\Models\Klanten;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
 
+// Dit is de response voor een aangepaste klant
 readonly class KlantenUpdateResponse implements Responsable
 {
+    // Hier slaat ie de aangepaste klant op
     public function __construct(
         private Klanten $klanten
     ) {
     }
 
+    // Zet de gegevens om naar een JSON antwoord
     public function toResponse($request): JsonResponse
     {
         return response()->json([

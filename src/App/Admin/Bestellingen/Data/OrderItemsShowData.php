@@ -4,15 +4,15 @@ namespace App\Admin\Bestellingen\Data;
 
 use Domain\Bestellingen\Models\OrderItems;
 
+// Deze klasse bereidt de orderitem-gegevens voor op JSON-serialisatie
 readonly class OrderItemsShowData implements \JsonSerializable
 {
     public function __construct(
         private OrderItems $orderItems
     ) {}
 
+    // Zet de orderitemobject-gegevens om naar een array voor de API-output
     /**
-     * @inheritDoc
-     *
      * @return array<string, mixed>
      */
     public function jsonSerialize(): array

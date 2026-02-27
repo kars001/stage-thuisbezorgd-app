@@ -68,6 +68,4 @@ The project follows a modified PSR-4 structure within the `src/` directory to se
   - `Producten` (Products)
   - `Restaurants`
   - `Users`
-- `src/Support`: Cross-cutting concerns like Authentication, Settings, and Utilities.
 - `database/`: Migrations, Factories, and Seeders.
-- `resources/`: Lang files and raw frontend assets.

@@ -33,7 +33,7 @@ This repository contains the backend and administrative interface for a delivery
    ```
 
 2. **Setup Docker**:
-   Change the container_name for the laravel container
+   Change the `container_name` for the laravel container.
 
 3. **Run**
     ```bash
@@ -56,7 +56,7 @@ This repository contains the backend and administrative interface for a delivery
    ```
 
 7. **Setup the env**
-   Edit .env make sure DB_HOST=mysql8, DB_USER=root, DB_PASSWORD=root and DB_NAME something sensible
+   Edit .env make sure `DB_HOST`, `DB_USER`, `DB_PASSWORD` and `DB_NAME` are something sensible.
 
 8. **Run**
     ```bash

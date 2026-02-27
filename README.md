@@ -42,16 +42,16 @@ This repository contains the backend and administrative interface for a delivery
 
 ## Project Structure
 
-The project follows a modified PSR-4 structure within the `src/` directory to separate concerns:
+The project follows a modified DDD (Domain Driven Design) structure within the `src/` directory to separate concerns:
 
 - `src/App`: Infrastructure, HTTP Controllers, Middleware, Routes, and Filament Resources.
   - `src/App/Admin`: Filament admin panel implementation.
   - `src/App/Api`: API specific logic and controllers.
   - `src/App/routes`: Web, API, and Console route definitions.
 - `src/Domain`: Core business logic, Models, Actions, and Data Transfer Objects, organized by domain:
-  - `Bestellingen` (Orders)
-  - `Klanten` (Customers)
-  - `Producten` (Products)
+  - `Bestellingen`
+  - `Klanten`
+  - `Producten`
   - `Restaurants`
   - `Users`
 - `database/`: Migrations, Factories, and Seeders.

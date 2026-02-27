@@ -30,29 +30,15 @@ This repository contains the backend and administrative interface for a delivery
    cd stage-thuisbezorgd-app
    ```
 
-2. **Run the setup script**:
-   This custom composer script handles dependency installation, environment setup, key generation, migrations, and asset building.
+2. **Setup Docker**:
+   Run the following command to start the application with Docker:
    ```bash
-   composer setup
+    docker-compose up -d
    ```
-   *Note: Ensure you have a database running and configured in your `.env` file before migrations run.*
 
 3. **Configure Environment**:
    Edit the generated `.env` file to match your local database and service credentials.
-
-4. **Start the development servers**:
-   ```bash
-   composer dev
-   ```
-   This command uses `concurrently` to start the PHP server, queue listener, logs (Pail), and Vite dev server.
-
-### Docker Development
-
-The project includes a `docker-compose.yaml` file.
-
-```bash
-docker-compose up -d
-```
+*Note: Ensure you have a database running before running migrations.*
 
 ## Project Structure
 

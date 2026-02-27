@@ -1,0 +1,19 @@
+
+services:
+  bezorg-app:
+    image: ghcr.io/hatch-digital-nl/tooling-docker-containers/dev:php8.3-node22
+    container_name: bezorg-app
+    environment:
+      - RUNTYPE=Laravel
+    volumes:
+      - '.:/app'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.bezorg-app.tls=true"
+      - "traefik.http.services.bezorg-app.loadbalancer.server.port=8080"     
+      - "traefik.http.routers.template.rule=Host(`bezorg-app.unframed.local`)"
+    networks:
+      - proxy
+networks:
+  proxy:
+    external: true

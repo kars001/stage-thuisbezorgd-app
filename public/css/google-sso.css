@@ -1,0 +1,11 @@
+.btn-google-sso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-google-sso .fi-icon {
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+}

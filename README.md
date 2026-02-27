@@ -20,7 +20,7 @@ This repository contains the backend and administrative interface for a delivery
 - **Composer**: ^2.0
 - **Node.js & npm**: Recent LTS versions
 - **Database**: MySQL or MariaDB
-- **Docker** For macos OrbStack is recccomended
+- **Docker** For macos OrbStack is recommended
 
 ## Setup & Installation
 

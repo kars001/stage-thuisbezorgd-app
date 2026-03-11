@@ -4,6 +4,7 @@ namespace App\Admin\Klanten\Controllers;
 
 use App\Admin\Klanten\Requests\StoreKlantenRequest;
 use App\Admin\Klanten\Requests\UpdateKlantenRequest;
+use App\Admin\Klanten\Responses\KlantenIndexResponse;
 use App\Admin\Klanten\Responses\KlantenStoreResponse;
 use App\Admin\Klanten\Responses\KlantenUpdateResponse;
 use Domain\Klanten\Actions\CreateKlantenAction;
@@ -14,9 +15,24 @@ use Domain\Klanten\Exceptions\KlantenException;
 use Domain\Klanten\Exceptions\UpdateKlantenException;
 use Domain\Klanten\Models\Klanten;
 use Illuminate\Http\JsonResponse;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class KlantenController
 {
+    // Toon een lijst met alle klanten.
+    public function index(): KlantenIndexResponse|JsonResponse
+    {
+        try {
+            $klanten = QueryBuilder::for(Klanten::class)
+                ->get();
+
+            return new KlantenIndexResponse($klanten);
+        } catch (\Exception $e) {
+            return response()->json([
+                'message' => $e->getMessage(),
+            ]);
+        }
+    }
      // Sla een nieuwe klant op.
     public function store(StoreKlantenRequest $request, CreateKlantenAction $action): KlantenStoreResponse|JsonResponse
     {

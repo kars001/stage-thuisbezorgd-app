@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Collection;
 // Dit is de response voor de lijst met restaurants
 readonly class RestaurantIndexResponse implements Responsable
 {
-    // Hier slaat ie de lijst met restaurants op
+    // Hier haalt ie de lijst met restaurants op
     /**
      * @param Collection<int, Restaurant> $restaurant
      */

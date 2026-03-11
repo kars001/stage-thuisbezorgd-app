@@ -12,10 +12,17 @@ use Illuminate\Support\Facades\Route;
 Route::group([
     'middleware' => ['auth:api'],
 ], static function () {
-    Route::apiResource('users', UserController::class);
-    Route::apiResource('bestellingen', BestelController::class);
-    Route::apiResource('orderItems', OrderItemsController::class);
-    Route::apiResource('producten', ProductController::class);
-    Route::apiResource('restaurants', RestaurantController::class);
-    Route::apiResource('klanten', KlantenController::class);
+//    Route::apiResource('users', UserController::class);
+//    Route::apiResource('bestellingen', BestelController::class);
+//    Route::apiResource('orderItems', OrderItemsController::class);
+//    Route::apiResource('producten', ProductController::class);
+//    Route::apiResource('restaurants', RestaurantController::class);
+//    Route::apiResource('klanten', KlantenController::class);
 });
+
+Route::apiResource('users', UserController::class);
+Route::apiResource('bestellingen', BestelController::class);
+Route::apiResource('orderItems', OrderItemsController::class);
+Route::apiResource('producten', ProductController::class);
+Route::apiResource('restaurants', RestaurantController::class);
+Route::apiResource('klanten', KlantenController::class);

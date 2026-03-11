@@ -3,6 +3,7 @@
 namespace App\Admin\Bestellingen\Responses;
 
 use App\Admin\Bestellingen\Data\BestellingenShowData;
+use Cowsayphp\Cow;
 use Domain\Bestellingen\Models\Bestellingen;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Http\JsonResponse;
@@ -21,7 +22,7 @@ readonly class BestellingenUpdateResponse implements Responsable
     {
         return response()->json([
             'data' => new BestellingenShowData($this->bestellingen),
-            'message' => 'Bestelling is succesvol geupdate.',
+            'message' => '<pre>'.Cow::say("Bestelling is succesvol geupdate.").'</pre>',
         ], 201);
     }
 }

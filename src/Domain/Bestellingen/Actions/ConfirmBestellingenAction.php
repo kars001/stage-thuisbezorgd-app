@@ -19,7 +19,7 @@ class ConfirmBestellingenAction
         $minimaalBestelBedrag = Restaurant::query()->whereKey($bestellingen->restaurant_id)->value('minimaal_bestelbedrag') ?? 0;
         $orderItems = OrderItems::query()->getBestellingenOrderItems($bestellingen->id)->get();
 
-        // Berken totaalprijs.
+        // Bereken totaalprijs.
         $orderItemsPrijs = $orderItems->sum(fn($item) => $item->prijs * $item->aantal);
         $totaalPrijs = (float) $orderItemsPrijs + (float) $verzendKosten;
 

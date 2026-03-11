@@ -20,7 +20,7 @@ This repository contains the backend and administrative interface for a delivery
 - **Composer**: ^2.0
 - **Node.js & npm**: Recent LTS versions
 - **Database**: MySQL or MariaDB
-- **Docker** For macos OrbStack is recccomended
+- **Docker** For macos OrbStack is recommended
 
 ## Setup & Installation
 
@@ -33,14 +33,40 @@ This repository contains the backend and administrative interface for a delivery
    ```
 
 2. **Setup Docker**:
-   Run the following command to start the application with Docker:
-   ```bash
+   Change the `container_name` for the laravel container.
+
+3. **Run**
+    ```bash
     docker-compose up -d
+    ```
+
+4. **Enter the container**
+   ```bash
+   docker exec -it <CONTAINER_NAME> zsh
    ```
 
-3. **Configure Environment**:
-   Edit the generated `.env` file to match your local database and service credentials.
-*Note: Ensure you have a database running before running migrations.*
+5. **Run**
+   ```bash
+   composer i && npm i
+   ```
+
+6. **Run**
+   ```bash
+   php artisan key:generate
+   ```
+
+7. **Setup the env**
+   Edit .env make sure `DB_HOST`, `DB_USER`, `DB_PASSWORD` and `DB_NAME` are something sensible.
+
+8. **Run**
+    ```bash
+    php artisan migrate:fresh --seed
+    ```
+
+9. **Run**
+    ```bash
+    npm run build
+    ```
 
 ## Project Structure
 
